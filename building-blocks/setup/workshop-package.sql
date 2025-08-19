@@ -361,10 +361,10 @@ create or replace package body workshop as
         begin
     
 
-            write('installing ' || rec.name, 2);
+            write('installing ' || rec.object_name, 2);
             dbms_cloud_repo.install_file(
                 repo        => l_git,
-                file_path   => rec.name);
+                file_path   => rec.object_name);
     
 
             exception
